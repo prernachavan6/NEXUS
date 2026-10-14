@@ -1,4 +1,4 @@
-# NEXUS E-Commerce — Unifying e-commerce transactions with advanced analytics and Decision Support System (DSS)
+# NEXUS E-Commerce — Operational Storefront Integrated with Advanced Analytics & DSS
 **A Full-Stack Data Warehouse and Data Mining (DWM) Enterprise Platform**
 
 ---
