@@ -16,32 +16,13 @@ Querying normalized tables for deep analytical intelligence degrades the checkou
 
 ---
 
-## 2. Where Backend Data is Stored & How to Show Evaluators ("Ma'am")
+## 2. Where Backend Data is Stored?
 
 The entire database is stored locally in an enterprise SQLite relational database:
 ```
 backend/nexus_ecommerce.db
 ```
-*(No need to configure XAMPP Apache or troubleshoot MySQL port conflicts — SQLite is zero-configuration, lightweight, and fully embedded).*
-
-### Option A: Direct Web UI Inspection (Recommended for Presentations)
-1. Log in as Admin (`admin@shop.in` / `admin123`).
-2. Click the **"Database Inspector"** tab in the top navigation.
-3. Select any table from the dropdown (`orders`, `order_items`, `customers`, `products`, `fact_sales`, `dim_customer`, `dim_date`, `etl_audit_log`).
-4. Real, raw records with live **Order IDs**, customer names, delivery cities, and amounts will be shown on screen.
-5. There is an interactive **SQL Query Sandbox** where you or your evaluator can type custom SQL queries (e.g., `SELECT * FROM orders ORDER BY id DESC LIMIT 10`) and view immediate tabular outputs!
-
-### Option B: Terminal Database Inspection Script
-If your evaluator asks to view the backend from the command line:
-```bash
-python show_db.py
-```
-This prints the latest operational orders, star schema fact rows, and table row counts in formatted ASCII tables.
-
-### Option C: GUI SQLite Viewers
-You can also open `backend/nexus_ecommerce.db` directly in:
-- **DB Browser for SQLite** (free downloadable GUI viewer)
-- **VS Code SQLite Viewer Extension**
+*(SQLite is zero-configuration, lightweight, and fully embedded).*
 
 ---
 
