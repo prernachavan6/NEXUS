@@ -1,4 +1,4 @@
-# NEXUS E-Commerce — Operational Storefront & Executive Decision Support System (DSS)
+# NEXUS E-Commerce — Unifying e-commerce transactions with advanced analytics and Decision Support System (DSS)
 **A Full-Stack Data Warehouse and Data Mining (DWM) Enterprise Platform**
 
 ---
@@ -61,4 +61,4 @@ backend/nexus_ecommerce.db
 *(Press **`P`** on any page to toggle **16:9 Presentation Fit** for projector/screen presentations).*
 
 ---
-**NEXUS E-Commerce — Operational Storefront & Executive Analytics Platform © 2026**
+**NEXUS E-Commerce — Operational Storefront & Analytical Decision Support Platform © 2026**
