@@ -1,13 +1,3 @@
-"""
-NEXUS E-Commerce — Advanced Data Mining & Machine Learning Algorithms
-Implements pure Python machine learning and multidimensional OLAP operations:
-  1. Multidimensional OLAP Cube (Roll-up, Drill-down, Slice, Dice, Pivot)
-  2. Customer Clustering: K-Means (K-Means++), Agglomerative, Divisive Hierarchical
-  3. Customer Classification: Gaussian Naive Bayes and K-Nearest Neighbors (KNN)
-  4. Sales Forecasting: Simple Linear Regression with R² and 3-Month Projection
-  5. Market Basket Analysis: Tri-Algorithm Comparison (Apriori vs. FP-Growth vs. Eclat)
-"""
-
 import math
 import random
 import time
