@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NEXUS E-Commerce — Operational Storefront &amp; Analytics Platform</title>
+
+<!-- Modern Enterprise Typography & Chart.js -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+<!-- Mauve & Off-White Stylesheet -->
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- Header Navigation -->
+<header>
+  <div class="hdr-inner">
+    <div class="logo-box" onclick="switchView('store')">
+      <div class="logo-mark">N</div>
+      <div class="logo-text">
+        <h1>NEXUS</h1>
+        <p>E-Commerce Store</p>
+      </div>
+    </div>
+    
+    <div class="search-wrap">
+      <span class="search-ico">🔍</span>
+      <input id="storeSearch" placeholder="Search catalog, categories, SKU..." oninput="onSearch(this.value)">
+    </div>
+    
+    <div class="nav-actions">
+      <!-- 16:9 Presentation Fit Toggle (Shortcut: P) -->
+      <button class="btn-nav" id="btnPresentation" onclick="togglePresentationMode()" title="Fit layout to 16:9 presentation display (Shortcut: P)">
+        <span id="presIcon">🖥️</span> <span id="presLabel">16:9 Fit</span>
+      </button>
+
+      <!-- Theme Switcher -->
+      <button class="btn-nav" id="themeToggleBtn" onclick="toggleTheme()" title="Toggle theme">
+        <span id="themeIcon">🌙</span> <span id="themeLabel">Dark</span>
+      </button>
+
+      <button class="btn-nav active" id="navStore" onclick="switchView('store')">Store</button>
+      
+      <!-- Analytics & Admin: Strictly visible for Admin -->
+      <button class="btn-nav admin-pill" id="navAdmin" onclick="switchView('admin')" style="display:none;">
+        🛡️ Admin Suite
+      </button>
+
+      <button class="btn-nav" id="navOrders" onclick="openOrdersModal()" style="display:none">My Orders</button>
+      <button class="btn-nav" id="navWish" onclick="openWishModal()">Saved (<span id="wishCount">0</span>)</button>
+      <button class="btn-nav primary-pill" onclick="openCartModal()">Cart (<span id="cartCount">0</span>)</button>
+      
+      <div id="authNav">
+        <button class="btn btn-sm" onclick="openAuthModal('login')">Sign In</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Context Sub-Bar (Strictly visible for Admin role) -->
+<div class="mode-bar" id="modeBar" style="display:none;">
+  <div class="mode-bar-inner">
+    <div class="mode-selector">
+      <button class="mode-btn active" id="btnModeStore" onclick="switchView('store')">Storefront (OLTP)</button>
+      <button class="mode-btn" id="btnModeAdmin" onclick="switchView('admin')">Data Warehouse &amp; Mining (OLAP)</button>
+    </div>
+    <div class="system-status">
+      <span>Operational DB: <strong id="metaOrdersCount">Active</strong></span>
+      <span class="sep">•</span>
+      <span>Warehouse: <strong id="metaFactCount">Active</strong></span>
+      <span class="sep">•</span>
+      <span class="status-indicator"><span class="dot"></span> Synced</span>
+    </div>
+  </div>
+</div>
+
+<!-- Main Application Target -->
+<main id="appContainer"></main>
+
+<!-- Floating Presentation Controls -->
+<div id="presentationBar" class="presentation-floating-bar" style="display:none;">
+  <span class="pres-indicator"><span class="dot-pulse"></span> 16:9 Presentation Fit</span>
+  <span class="pres-sep">|</span>
+  <button class="btn-pres-action" onclick="toggleFullscreen()">⛶ Fullscreen</button>
+  <button class="btn-pres-action" onclick="togglePresentationMode()">✕ Exit Fit (Esc)</button>
+</div>
+
+<!-- Modals -->
+<div class="modal-overlay" id="modalOverlay" onclick="if(event.target==this)closeModal()"></div>
+
+<!-- Toast -->
+<div id="toast"></div>
+
+<!-- Clean Brand-Only Footer (Zero Watermarks) -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-title">NEXUS E-Commerce</div>
+    <div class="footer-subtitle">Operational Storefront &amp; Analytical Decision Support Platform © 2026</div>
+  </div>
+</footer>
+
+<!-- JavaScript Modules -->
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
